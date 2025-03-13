@@ -1,0 +1,32 @@
+String str= " Error abc  error abb";
+
+int cnt= str.substring("Error");
+
+int totalerrors=cnt.length;
+
+String logData="";
+String logEntries[] = logData.split("\n");
+int errorCount = 0;
+for(String log: logEntries){
+if(log.startsWith("ERROR"){
+errorCount+=1;
+}
+}
+
+get api http://www.example.com/error_count
+
+
+"errorCount" : 50
+}
+
+RestAssured.baseuri="http://www.example.com/";
+RequestSpecification httprequest=RestAssured.given();
+Response resp= httprequest.request(Method.get "/error_count/");
+
+String str=resp.getbody.asString();
+if (str.contains(errorCount){
+int cnt=resp.jsonpath().get"errorCount";
+System.out.println(cnt);
+}
+else{
+}
